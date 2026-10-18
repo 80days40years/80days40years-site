@@ -114,6 +114,12 @@ a{color:inherit}
 .g-time{grid-area:time;font-family:var(--narrow);font-weight:600;font-size:1.45rem;line-height:1.2;font-variant-numeric:tabular-nums}
 .ghosts .next .g-time{font-family:var(--display);font-weight:700;font-size:2rem;color:var(--gold);line-height:1}
 
+/* 1873 map band */
+.map-band{border-top:1px solid var(--rule)}
+.old-map{margin:0;padding-block:clamp(2rem,5vw,3.25rem)}
+.old-map img{display:block;width:100%;max-width:60rem;height:auto;border-radius:3px;box-shadow:0 22px 44px -28px #050f0b}
+.old-map figcaption{margin-top:.75rem;color:var(--ink-dim);font-size:.85rem}
+
 /* Plates (1873 engravings) */
 .with-plate{display:grid;gap:2.25rem}
 @media (min-width:900px){.with-plate{grid-template-columns:minmax(0,1fr) minmax(0,19rem);gap:3.5rem;align-items:start}}
@@ -221,6 +227,15 @@ a{color:inherit}
       </div>
     </div>
   </header>
+
+  <section class="map-band" aria-label="Fogg's route as mapped in an early edition">
+    <div class="wrap">
+      <figure class="old-map">
+        <img src="map-1873.jpg" width="960" height="320" alt="Old engraved world map with a line tracing Fogg's route east from London, across Asia and the Pacific, through North America and back over the Atlantic.">
+        <figcaption>Fogg's route, as mapped in an early French edition of the novel.</figcaption>
+      </figure>
+    </div>
+  </section>
 
   <section class="section" aria-labelledby="ghosts-h">
     <div class="wrap section-in">

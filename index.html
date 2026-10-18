@@ -114,6 +114,14 @@ a{color:inherit}
 .g-time{grid-area:time;font-family:var(--narrow);font-weight:600;font-size:1.45rem;line-height:1.2;font-variant-numeric:tabular-nums}
 .ghosts .next .g-time{font-family:var(--display);font-weight:700;font-size:2rem;color:var(--gold);line-height:1}
 
+/* Plates (1873 engravings) */
+.with-plate{display:grid;gap:2.25rem}
+@media (min-width:900px){.with-plate{grid-template-columns:minmax(0,1fr) minmax(0,19rem);gap:3.5rem;align-items:start}}
+.plate{margin:0;max-width:19rem;justify-self:center}
+@media (min-width:900px){.plate{justify-self:end}}
+.plate img{display:block;width:100%;height:auto;border-radius:3px;box-shadow:0 22px 44px -28px #050f0b}
+.plate figcaption{margin-top:.75rem;color:var(--ink-dim);font-size:.85rem;line-height:1.45}
+
 /* Fogg's timetable */
 .paper{background:var(--paper);color:var(--paper-ink);border-radius:3px;padding:clamp(1.1rem,4vw,2.25rem) clamp(1rem,4vw,2.5rem);max-width:46rem;box-shadow:0 22px 44px -28px #050f0b}
 .paper-head{display:flex;justify-content:space-between;gap:1rem;font-family:var(--narrow);font-weight:600;font-size:.9rem;color:var(--paper-dim);border-bottom:2px solid var(--paper-ink);padding-bottom:.5rem}
@@ -216,23 +224,29 @@ a{color:inherit}
   <section class="section" aria-labelledby="ghosts-h">
     <div class="wrap section-in">
       <h2 id="ghosts-h">Two ghosts to beat</h2>
-      <ol class="ghosts">
-        <li>
-          <span class="g-year">1872</span>
-          <div class="g-who"><strong>Phileas Fogg</strong><span>A £20,000 bet at the Reform Club, about £2.5m today. In the novel he walked back in on the stroke of 8.45.</span></div>
-          <span class="g-time">80 days</span>
-        </li>
-        <li>
-          <span class="g-year">1988</span>
-          <div class="g-who"><strong>Michael Palin</strong><span>No planes, real timetables and a camera crew. Home on 13 December 1988 with 17 hours to spare.</span></div>
-          <span class="g-time">79 days, 7 hours</span>
-        </li>
-        <li class="next">
-          <span class="g-year">2028</span>
-          <div class="g-who"><strong>The third attempt</strong><span>Out on 2 October, due back by Thursday 21 December. Under 79 days and 7 hours beats them both.</span></div>
-          <span class="g-time">?</span>
-        </li>
-      </ol>
+      <div class="with-plate">
+        <ol class="ghosts">
+          <li>
+            <span class="g-year">1872</span>
+            <div class="g-who"><strong>Phileas Fogg</strong><span>A £20,000 bet at the Reform Club, about £2.5m today. In the novel he walked back in on the stroke of 8.45.</span></div>
+            <span class="g-time">80 days</span>
+          </li>
+          <li>
+            <span class="g-year">1988</span>
+            <div class="g-who"><strong>Michael Palin</strong><span>No planes, real timetables and a camera crew. Home on 13 December 1988 with 17 hours to spare.</span></div>
+            <span class="g-time">79 days, 7 hours</span>
+          </li>
+          <li class="next">
+            <span class="g-year">2028</span>
+            <div class="g-who"><strong>The third attempt</strong><span>Out on 2 October, due back by Thursday 21 December. Under 79 days and 7 hours beats them both.</span></div>
+            <span class="g-time">?</span>
+          </li>
+        </ol>
+      <figure class="plate">
+        <img src="plate-reform-club.jpg" width="640" height="925" loading="lazy" alt="Engraving of five Victorian gentlemen at a card table in a grand club room, with two more standing behind them.">
+        <figcaption>Whist at the Reform Club, where the bet was made. Alphonse de Neuville, from the first illustrated edition of 1873.</figcaption>
+      </figure>
+      </div>
     </div>
   </section>
 

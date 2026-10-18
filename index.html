@@ -126,7 +126,7 @@ a{color:inherit}
 .plate{margin:0;max-width:19rem;justify-self:center}
 @media (min-width:900px){.plate{justify-self:end}}
 .plate img{display:block;width:100%;height:auto;border-radius:3px;box-shadow:0 22px 44px -28px #050f0b}
-.timetable-col{min-width:0}
+.timetable-col,.plate-col{min-width:0}
 .plate figcaption{margin-top:.75rem;color:var(--ink-dim);font-size:.85rem;line-height:1.45}
 
 /* Fogg's timetable */
@@ -179,6 +179,7 @@ a{color:inherit}
 .sponsor dd{margin:0;color:var(--ink-dim);max-width:30rem}
 
 /* Contact */
+@media (min-width:900px){.contact .with-plate{align-items:center}}
 .contact p{max-width:36rem;margin:0 0 1.75rem;font-size:1.12rem}
 
 /* Footer */
@@ -331,32 +332,48 @@ a{color:inherit}
     <div class="wrap section-in">
       <h2 id="sponsor-h">Sponsor the journey</h2>
       <p class="intro">Eighty days of daily stories from ships, trains and ports, plus the build-up from now until departure. There's room for a small number of partners, and each partnership is shaped individually.</p>
-      <dl class="sponsor">
-        <div><dt>The whole way round</dt><dd>One title partner, named alongside the journey for all 80 days and the run-up to departure.</dd></div>
-        <div><dt>A leg</dt><dd>Back a single stretch, such as the Pacific crossing, and own that part of the story.</dd></div>
-        <div><dt>A day</dt><dd>One person is met on each day of the journey. Put your name to one of the eighty.</dd></div>
-        <div><dt>Passage and kit</dt><dd>A cabin, a rail pass, a rucksack that survives three oceans. Support in kind is just as welcome.</dd></div>
-      </dl>
-      <div class="actions">
-        <a class="btn btn-primary" href="mailto:hello@80days40years.com?subject=Sponsorship">Email about sponsorship</a>
-        <span class="email">
-          <a class="email-addr" href="mailto:hello@80days40years.com?subject=Sponsorship">hello@80days40years.com</a>
-          <button class="btn copy" type="button" id="copy-sponsor" data-copy="hello@80days40years.com">Copy address</button>
-        </span>
+      <div class="with-plate">
+        <div class="plate-col">
+        <dl class="sponsor">
+          <div><dt>The whole way round</dt><dd>One title partner, named alongside the journey for all 80 days and the run-up to departure.</dd></div>
+          <div><dt>A leg</dt><dd>Back a single stretch, such as the Pacific crossing, and own that part of the story.</dd></div>
+          <div><dt>A day</dt><dd>One person is met on each day of the journey. Put your name to one of the eighty.</dd></div>
+          <div><dt>Passage and kit</dt><dd>A cabin, a rail pass, a rucksack that survives three oceans. Support in kind is just as welcome.</dd></div>
+        </dl>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:hello@80days40years.com?subject=Sponsorship">Email about sponsorship</a>
+          <span class="email">
+            <a class="email-addr" href="mailto:hello@80days40years.com?subject=Sponsorship">hello@80days40years.com</a>
+            <button class="btn copy" type="button" id="copy-sponsor" data-copy="hello@80days40years.com">Copy address</button>
+          </span>
+        </div>
+        </div>
+        <figure class="plate">
+          <img src="plate-henrietta.jpg" width="640" height="913" loading="lazy" alt="Engraving of sailors on a steamer's deck sawing and chopping up the ship's woodwork beside its tall funnels.">
+          <figcaption>The Henrietta's crew break up her woodwork to keep the boilers burning. Léon Benett, from the first illustrated edition of 1873.</figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
   <section class="section contact" aria-labelledby="contact-h">
     <div class="wrap section-in">
-      <h2 id="contact-h">Know someone on the route?</h2>
-      <p>A cargo captain with a spare cabin. A ferry that isn't on any timetable. Someone in Mumbai, Shanghai or Yokohama worth meeting. Get in touch.</p>
-      <div class="actions">
-        <a class="btn btn-primary" href="https://www.instagram.com/80days40years" target="_blank" rel="noopener">Follow on Instagram</a>
-        <span class="email">
-          <a class="email-addr" href="mailto:hello@80days40years.com">hello@80days40years.com</a>
-          <button class="btn copy" type="button" id="copy-contact" data-copy="hello@80days40years.com">Copy address</button>
-        </span>
+      <div class="with-plate">
+        <div class="plate-col">
+          <h2 id="contact-h">Know someone on the route?</h2>
+        <p>A cargo captain with a spare cabin. A ferry that isn't on any timetable. Someone in Mumbai, Shanghai or Yokohama worth meeting. Get in touch.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://www.instagram.com/80days40years" target="_blank" rel="noopener">Follow on Instagram</a>
+          <span class="email">
+            <a class="email-addr" href="mailto:hello@80days40years.com">hello@80days40years.com</a>
+            <button class="btn copy" type="button" id="copy-contact" data-copy="hello@80days40years.com">Copy address</button>
+          </span>
+        </div>
+        </div>
+        <figure class="plate">
+          <img src="plate-return.jpg" width="640" height="926" loading="lazy" alt="Engraving of a man walking into a grand club room, hat in hand, watched by a group of gentlemen and a crowd at the door.">
+          <figcaption>&ldquo;Here I am, gentlemen.&rdquo; Fogg walks back into the Reform Club on the stroke of 8.45. From the first illustrated edition of 1873.</figcaption>
+        </figure>
       </div>
     </div>
   </section>

@@ -120,6 +120,7 @@ a{color:inherit}
 .plate{margin:0;max-width:19rem;justify-self:center}
 @media (min-width:900px){.plate{justify-self:end}}
 .plate img{display:block;width:100%;height:auto;border-radius:3px;box-shadow:0 22px 44px -28px #050f0b}
+.timetable-col{min-width:0}
 .plate figcaption{margin-top:.75rem;color:var(--ink-dim);font-size:.85rem;line-height:1.45}
 
 /* Fogg's timetable */
@@ -273,21 +274,29 @@ a{color:inherit}
           <span class="route-map-hint">Swipe to follow the route</span>
         </figcaption>
       </figure>
-      <div class="paper">
-        <div class="paper-head"><span>From and to</span><span>Days</span></div>
-        <ol class="legs">
-          <li><span class="leg"><span class="leg-from">London to Suez</span><span class="leg-by">Rail and steamer, via Mont Cenis and Brindisi</span></span><span class="dots" aria-hidden="true"></span><span class="days">7</span></li>
-          <li><span class="leg"><span class="leg-from">Suez to Bombay</span><span class="leg-by">Steamer</span></span><span class="dots" aria-hidden="true"></span><span class="days">13</span></li>
-          <li><span class="leg"><span class="leg-from">Bombay to Calcutta</span><span class="leg-by">Rail</span></span><span class="dots" aria-hidden="true"></span><span class="days">3</span></li>
-          <li><span class="leg"><span class="leg-from">Calcutta to Hong Kong</span><span class="leg-by">Steamer</span></span><span class="dots" aria-hidden="true"></span><span class="days">13</span></li>
-          <li><span class="leg"><span class="leg-from">Hong Kong to Yokohama</span><span class="leg-by">Steamer</span></span><span class="dots" aria-hidden="true"></span><span class="days">6</span></li>
-          <li><span class="leg"><span class="leg-from">Yokohama to San Francisco</span><span class="leg-by">Steamer across the Pacific</span></span><span class="dots" aria-hidden="true"></span><span class="days">22</span></li>
-          <li><span class="leg"><span class="leg-from">San Francisco to New York</span><span class="leg-by">Rail</span></span><span class="dots" aria-hidden="true"></span><span class="days">7</span></li>
-          <li><span class="leg"><span class="leg-from">New York to London</span><span class="leg-by">Steamer and rail</span></span><span class="dots" aria-hidden="true"></span><span class="days">9</span></li>
-        </ol>
-        <div class="total"><span class="leg"><span class="leg-from">London to London</span></span><span class="dots" aria-hidden="true"></span><span class="days">80</span></div>
+      <div class="with-plate">
+        <div class="timetable-col">
+        <div class="paper">
+          <div class="paper-head"><span>From and to</span><span>Days</span></div>
+          <ol class="legs">
+            <li><span class="leg"><span class="leg-from">London to Suez</span><span class="leg-by">Rail and steamer, via Mont Cenis and Brindisi</span></span><span class="dots" aria-hidden="true"></span><span class="days">7</span></li>
+            <li><span class="leg"><span class="leg-from">Suez to Bombay</span><span class="leg-by">Steamer</span></span><span class="dots" aria-hidden="true"></span><span class="days">13</span></li>
+            <li><span class="leg"><span class="leg-from">Bombay to Calcutta</span><span class="leg-by">Rail</span></span><span class="dots" aria-hidden="true"></span><span class="days">3</span></li>
+            <li><span class="leg"><span class="leg-from">Calcutta to Hong Kong</span><span class="leg-by">Steamer</span></span><span class="dots" aria-hidden="true"></span><span class="days">13</span></li>
+            <li><span class="leg"><span class="leg-from">Hong Kong to Yokohama</span><span class="leg-by">Steamer</span></span><span class="dots" aria-hidden="true"></span><span class="days">6</span></li>
+            <li><span class="leg"><span class="leg-from">Yokohama to San Francisco</span><span class="leg-by">Steamer across the Pacific</span></span><span class="dots" aria-hidden="true"></span><span class="days">22</span></li>
+            <li><span class="leg"><span class="leg-from">San Francisco to New York</span><span class="leg-by">Rail</span></span><span class="dots" aria-hidden="true"></span><span class="days">7</span></li>
+            <li><span class="leg"><span class="leg-from">New York to London</span><span class="leg-by">Steamer and rail</span></span><span class="dots" aria-hidden="true"></span><span class="days">9</span></li>
+          </ol>
+          <div class="total"><span class="leg"><span class="leg-from">London to London</span></span><span class="dots" aria-hidden="true"></span><span class="days">80</span></div>
+        </div>
+        <p class="found">Some of the ships haven't been found yet.</p>
+        </div>
+        <figure class="plate">
+          <img src="plate-elephant.jpg" width="640" height="925" loading="lazy" alt="Engraving of a man in a top hat riding an elephant, with a companion in a bowler hat and a guide holding a goad.">
+          <figcaption>Crossing India by elephant when the railway turns out to be unfinished. Léon Benett, from the first illustrated edition of 1873.</figcaption>
+        </figure>
       </div>
-      <p class="found">Some of the ships haven't been found yet.</p>
     </div>
   </section>
 

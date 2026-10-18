@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Two ghosts. One deadline. No planes. Round the world in 80 days, leaving London on 2 October 2028.">
+<meta name="theme-color" content="#16382B">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://80days40years.com/">
+<meta property="og:title" content="80 Days, 40 Years Later">
+<meta property="og:description" content="Two ghosts. One deadline. No planes. Round the world in 80 days, leaving London on 2 October 2028.">
+<meta property="og:image" content="https://80days40years.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>80 Days, 40 Years Later</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Barlow:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap">
+<style>
+/* Layout: one left-aligned column. The hero pairs the headline with the 80-tick dial
+   (one tick per day of the journey). Fogg's 1872 timetable is the only object set off,
+   on a paper panel like a page from a printed travel guide. Single deliberate dark-green look. */
+:root{
+  --ground:#16382B;
+  --ground-deep:#112E23;
+  --ink:#F2E8D0;
+  --ink-dim:#B8B9A3;
+  --gold:#C9A55C;
+  --gold-hi:#D9BB78;
+  --signal:#C44034;
+  --rule:#36533F;
+  --paper:#F2E8D0;
+  --paper-ink:#16382B;
+  --paper-dim:#56685B;
+  --paper-line:#D9D2BB;
+  --display:"Playfair Display", Georgia, "Times New Roman", serif;
+  --body:"Barlow", "Helvetica Neue", Arial, sans-serif;
+  --narrow:"Barlow Semi Condensed", "Arial Narrow", "Barlow", sans-serif;
+  color-scheme: dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{background:var(--ground)}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+.wrap{max-width:68rem;margin-inline:auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+@media (min-width:600px){.wrap{padding-left:max(32px, env(safe-area-inset-left, 0px));padding-right:max(32px, env(safe-area-inset-right, 0px))}}
+
+/* Hero */
+.hero{display:grid;gap:clamp(1.75rem,5vw,3.5rem);padding-block:clamp(2.25rem,7vw,5.5rem) clamp(3rem,7vw,5rem)}
+.hero-dial{justify-self:center;width:min(62vw,15rem)}
+@media (min-width:820px){
+  .hero{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);align-items:center}
+  .hero-dial{order:2;width:min(100%,23rem)}
+}
+.dial{display:block;width:100%;height:auto;max-width:100%}
+.dial .ring{fill:none;stroke:var(--rule);stroke-width:1.5}
+.dial .tick{stroke:var(--ink);stroke-width:1.6;stroke-linecap:round;opacity:.5}
+.dial .tick.major{stroke:var(--gold);stroke-width:3.4;opacity:1}
+.dial .start{fill:var(--signal)}
+.dial .n80{fill:var(--ink);font-family:var(--display);font-weight:700;font-size:118px}
+.dial .n40{fill:var(--gold);font-family:var(--display);font-weight:700;font-size:72px}
+.dial .bar{stroke:var(--gold);stroke-width:2}
+@media (prefers-reduced-motion:no-preference){
+  .dial .tick{animation:tick-in .5s ease-out both;animation-delay:calc(var(--i) * 16ms + 150ms)}
+  @keyframes tick-in{from{opacity:.06}}
+}
+
+.hero h1{font-family:var(--display);font-weight:700;font-size:clamp(2.6rem,7.2vw,4.5rem);line-height:1.02;letter-spacing:-.012em;margin:0 0 .75rem;text-wrap:balance}
+.h1-line{display:block}
+.tagline{font-family:var(--display);font-weight:600;font-size:clamp(1.35rem,3vw,1.75rem);line-height:1.25;color:var(--gold);margin:0 0 1.25rem}
+.lede{font-size:clamp(1.15rem,2.2vw,1.35rem);line-height:1.5;max-width:34rem;margin:0 0 1.75rem}
+.depart{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding-block:1.1rem;margin:0 0 1.75rem;display:grid;gap:.9rem;max-width:34rem}
+.depart-when{font-family:var(--narrow);font-weight:600;font-size:1.3rem;line-height:1.25;color:var(--gold);margin:0}
+.depart-note{color:var(--ink-dim);font-size:.95rem;margin:0}
+.count{display:flex;flex-wrap:wrap;gap:.5rem 1.75rem;margin:0}
+.count div{display:grid}
+.count dt{order:2;color:var(--ink-dim);font-size:.85rem}
+.count dd{margin:0;font-family:var(--narrow);font-weight:600;font-size:2.4rem;line-height:1.05;font-variant-numeric:tabular-nums}
+
+.actions{display:flex;flex-wrap:wrap;gap:.85rem 1.25rem;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--body);font-weight:600;font-size:1rem;line-height:1.2;text-decoration:none;padding:.8rem 1.3rem;border-radius:2px;border:1.5px solid var(--gold);background:transparent;color:var(--gold);cursor:pointer}
+.btn-primary{background:var(--gold);color:var(--ground)}
+.btn-primary:hover{background:var(--gold-hi);border-color:var(--gold-hi)}
+.email{display:inline-flex;align-items:center;flex-wrap:wrap;gap:.5rem .75rem;min-width:0}
+.email-addr{font-weight:500;text-decoration:none;border-bottom:1px solid var(--rule);overflow-wrap:anywhere}
+.email-addr:hover{border-bottom-color:var(--gold)}
+.copy{font-size:.875rem;padding:.4rem .75rem}
+.copy:hover{background:var(--ground-deep)}
+
+/* Sections */
+.section{border-top:1px solid var(--rule)}
+.section-in{padding-block:clamp(3rem,8vw,5.5rem)}
+.section h2{font-family:var(--display);font-weight:600;font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.1;margin:0 0 1rem;text-wrap:balance}
+.intro{max-width:36rem;color:var(--ink-dim);margin:0 0 2rem}
+
+/* Two ghosts */
+.ghosts{list-style:none;margin:0;padding:0}
+.ghosts li{display:grid;grid-template-columns:4.75rem minmax(0,1fr);grid-template-areas:"year who" "year time";column-gap:1.25rem;row-gap:.4rem;padding-block:1.4rem;border-top:1px solid var(--rule)}
+.ghosts li:last-child{border-bottom:1px solid var(--rule)}
+@media (min-width:720px){
+  .ghosts li{grid-template-columns:6.5rem minmax(0,1fr) 11rem;grid-template-areas:"year who time";align-items:baseline}
+  .g-time{text-align:right}
+}
+.g-year{grid-area:year;font-family:var(--display);font-weight:700;font-size:1.9rem;line-height:1;color:var(--gold)}
+.g-who{grid-area:who;display:grid;gap:.3rem;min-width:0}
+.g-who strong{font-weight:600;font-size:1.15rem;line-height:1.3}
+.g-who span{color:var(--ink-dim);max-width:36rem}
+.g-time{grid-area:time;font-family:var(--narrow);font-weight:600;font-size:1.45rem;line-height:1.2;font-variant-numeric:tabular-nums}
+.ghosts .next .g-time{font-family:var(--display);font-weight:700;font-size:2rem;color:var(--gold);line-height:1}
+
+/* Fogg's timetable */
+.paper{background:var(--paper);color:var(--paper-ink);border-radius:3px;padding:clamp(1.1rem,4vw,2.25rem) clamp(1rem,4vw,2.5rem);max-width:46rem;box-shadow:0 22px 44px -28px #050f0b}
+.paper-head{display:flex;justify-content:space-between;gap:1rem;font-family:var(--narrow);font-weight:600;font-size:.9rem;color:var(--paper-dim);border-bottom:2px solid var(--paper-ink);padding-bottom:.5rem}
+.legs{list-style:none;margin:0;padding:0}
+.legs li,.total{display:grid;grid-template-columns:minmax(0,max-content) minmax(1.25rem,1fr) auto;align-items:end;column-gap:.6rem;padding-block:.7rem;border-bottom:1px solid var(--paper-line)}
+.leg{min-width:0}
+.leg-from{display:block;font-family:var(--narrow);font-weight:600;font-size:1.12rem;line-height:1.25}
+.leg-by{display:block;font-size:.88rem;line-height:1.35;color:var(--paper-dim)}
+.dots{border-bottom:2px dotted var(--paper-dim);opacity:.45;margin-bottom:.4rem}
+.days{font-family:var(--narrow);font-weight:600;font-size:1.3rem;line-height:1.2;font-variant-numeric:tabular-nums;min-width:2ch;text-align:right}
+.total{border-bottom:0;border-top:3px double var(--paper-ink);margin-top:-1px;padding-bottom:0}
+.total .leg-from{font-size:1.15rem}
+.total .days{font-size:1.65rem}
+.found{max-width:36rem;margin:1.5rem 0 0;color:var(--ink-dim);font-size:.95rem}
+.found strong{color:var(--ink);font-weight:600}
+
+/* Rules */
+.rules{list-style:none;margin:0;padding:0;display:grid;gap:1.15rem;max-width:40rem}
+.rules li{display:grid;grid-template-columns:1rem minmax(0,1fr);gap:.85rem;font-size:1.18rem;line-height:1.45}
+.rules li::before{content:"";width:3px;height:1.15em;margin-top:.18em;background:var(--gold);border-radius:1px;justify-self:center}
+.rules strong{font-weight:600}
+
+/* Contact */
+.contact p{max-width:36rem;margin:0 0 1.75rem;font-size:1.12rem}
+
+/* Footer */
+.foot{border-top:1px solid var(--rule);color:var(--ink-dim);font-size:.9rem}
+.foot-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 2rem;padding-block:1.75rem 2.25rem}
+.foot a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+.foot a:hover{border-bottom-color:var(--gold)}
+</style>
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+</head>
+<body>
+<main>
+  <header class="wrap hero">
+    <div class="hero-dial">
+      <svg class="dial" viewBox="0 0 400 400" role="img" aria-labelledby="dial-title">
+        <title id="dial-title">A dial with 80 ticks, one for each day of the journey</title>
+        <circle class="ring" cx="200" cy="200" r="191"/>
+        <g><line class="tick major" style="--i:0" x1="200.0" y1="56.0" x2="200.0" y2="18.0"/><line class="tick" style="--i:1" x1="212.6" y1="40.5" x2="214.3" y2="18.6"/><line class="tick" style="--i:2" x1="225.0" y1="42.0" x2="228.5" y2="20.2"/><line class="tick" style="--i:3" x1="237.4" y1="44.4" x2="242.5" y2="23.0"/><line class="tick" style="--i:4" x1="249.4" y1="47.8" x2="256.2" y2="26.9"/><line class="tick" style="--i:5" x1="261.2" y1="52.2" x2="269.6" y2="31.9"/><line class="tick" style="--i:6" x1="272.6" y1="57.4" x2="282.6" y2="37.8"/><line class="tick" style="--i:7" x1="283.6" y1="63.6" x2="295.1" y2="44.8"/><line class="tick" style="--i:8" x1="294.0" y1="70.6" x2="307.0" y2="52.8"/><line class="tick" style="--i:9" x1="303.9" y1="78.3" x2="318.2" y2="61.6"/><line class="tick major" style="--i:10" x1="301.8" y1="98.2" x2="328.7" y2="71.3"/><line class="tick" style="--i:11" x1="321.7" y1="96.1" x2="338.4" y2="81.8"/><line class="tick" style="--i:12" x1="329.4" y1="106.0" x2="347.2" y2="93.0"/><line class="tick" style="--i:13" x1="336.4" y1="116.4" x2="355.2" y2="104.9"/><line class="tick" style="--i:14" x1="342.6" y1="127.4" x2="362.2" y2="117.4"/><line class="tick" style="--i:15" x1="347.8" y1="138.8" x2="368.1" y2="130.4"/><line class="tick" style="--i:16" x1="352.2" y1="150.6" x2="373.1" y2="143.8"/><line class="tick" style="--i:17" x1="355.6" y1="162.6" x2="377.0" y2="157.5"/><line class="tick" style="--i:18" x1="358.0" y1="175.0" x2="379.8" y2="171.5"/><line class="tick" style="--i:19" x1="359.5" y1="187.4" x2="381.4" y2="185.7"/><line class="tick major" style="--i:20" x1="344.0" y1="200.0" x2="382.0" y2="200.0"/><line class="tick" style="--i:21" x1="359.5" y1="212.6" x2="381.4" y2="214.3"/><line class="tick" style="--i:22" x1="358.0" y1="225.0" x2="379.8" y2="228.5"/><line class="tick" style="--i:23" x1="355.6" y1="237.4" x2="377.0" y2="242.5"/><line class="tick" style="--i:24" x1="352.2" y1="249.4" x2="373.1" y2="256.2"/><line class="tick" style="--i:25" x1="347.8" y1="261.2" x2="368.1" y2="269.6"/><line class="tick" style="--i:26" x1="342.6" y1="272.6" x2="362.2" y2="282.6"/><line class="tick" style="--i:27" x1="336.4" y1="283.6" x2="355.2" y2="295.1"/><line class="tick" style="--i:28" x1="329.4" y1="294.0" x2="347.2" y2="307.0"/><line class="tick" style="--i:29" x1="321.7" y1="303.9" x2="338.4" y2="318.2"/><line class="tick major" style="--i:30" x1="301.8" y1="301.8" x2="328.7" y2="328.7"/><line class="tick" style="--i:31" x1="303.9" y1="321.7" x2="318.2" y2="338.4"/><line class="tick" style="--i:32" x1="294.0" y1="329.4" x2="307.0" y2="347.2"/><line class="tick" style="--i:33" x1="283.6" y1="336.4" x2="295.1" y2="355.2"/><line class="tick" style="--i:34" x1="272.6" y1="342.6" x2="282.6" y2="362.2"/><line class="tick" style="--i:35" x1="261.2" y1="347.8" x2="269.6" y2="368.1"/><line class="tick" style="--i:36" x1="249.4" y1="352.2" x2="256.2" y2="373.1"/><line class="tick" style="--i:37" x1="237.4" y1="355.6" x2="242.5" y2="377.0"/><line class="tick" style="--i:38" x1="225.0" y1="358.0" x2="228.5" y2="379.8"/><line class="tick" style="--i:39" x1="212.6" y1="359.5" x2="214.3" y2="381.4"/><line class="tick major" style="--i:40" x1="200.0" y1="344.0" x2="200.0" y2="382.0"/><line class="tick" style="--i:41" x1="187.4" y1="359.5" x2="185.7" y2="381.4"/><line class="tick" style="--i:42" x1="175.0" y1="358.0" x2="171.5" y2="379.8"/><line class="tick" style="--i:43" x1="162.6" y1="355.6" x2="157.5" y2="377.0"/><line class="tick" style="--i:44" x1="150.6" y1="352.2" x2="143.8" y2="373.1"/><line class="tick" style="--i:45" x1="138.8" y1="347.8" x2="130.4" y2="368.1"/><line class="tick" style="--i:46" x1="127.4" y1="342.6" x2="117.4" y2="362.2"/><line class="tick" style="--i:47" x1="116.4" y1="336.4" x2="104.9" y2="355.2"/><line class="tick" style="--i:48" x1="106.0" y1="329.4" x2="93.0" y2="347.2"/><line class="tick" style="--i:49" x1="96.1" y1="321.7" x2="81.8" y2="338.4"/><line class="tick major" style="--i:50" x1="98.2" y1="301.8" x2="71.3" y2="328.7"/><line class="tick" style="--i:51" x1="78.3" y1="303.9" x2="61.6" y2="318.2"/><line class="tick" style="--i:52" x1="70.6" y1="294.0" x2="52.8" y2="307.0"/><line class="tick" style="--i:53" x1="63.6" y1="283.6" x2="44.8" y2="295.1"/><line class="tick" style="--i:54" x1="57.4" y1="272.6" x2="37.8" y2="282.6"/><line class="tick" style="--i:55" x1="52.2" y1="261.2" x2="31.9" y2="269.6"/><line class="tick" style="--i:56" x1="47.8" y1="249.4" x2="26.9" y2="256.2"/><line class="tick" style="--i:57" x1="44.4" y1="237.4" x2="23.0" y2="242.5"/><line class="tick" style="--i:58" x1="42.0" y1="225.0" x2="20.2" y2="228.5"/><line class="tick" style="--i:59" x1="40.5" y1="212.6" x2="18.6" y2="214.3"/><line class="tick major" style="--i:60" x1="56.0" y1="200.0" x2="18.0" y2="200.0"/><line class="tick" style="--i:61" x1="40.5" y1="187.4" x2="18.6" y2="185.7"/><line class="tick" style="--i:62" x1="42.0" y1="175.0" x2="20.2" y2="171.5"/><line class="tick" style="--i:63" x1="44.4" y1="162.6" x2="23.0" y2="157.5"/><line class="tick" style="--i:64" x1="47.8" y1="150.6" x2="26.9" y2="143.8"/><line class="tick" style="--i:65" x1="52.2" y1="138.8" x2="31.9" y2="130.4"/><line class="tick" style="--i:66" x1="57.4" y1="127.4" x2="37.8" y2="117.4"/><line class="tick" style="--i:67" x1="63.6" y1="116.4" x2="44.8" y2="104.9"/><line class="tick" style="--i:68" x1="70.6" y1="106.0" x2="52.8" y2="93.0"/><line class="tick" style="--i:69" x1="78.3" y1="96.1" x2="61.6" y2="81.8"/><line class="tick major" style="--i:70" x1="98.2" y1="98.2" x2="71.3" y2="71.3"/><line class="tick" style="--i:71" x1="96.1" y1="78.3" x2="81.8" y2="61.6"/><line class="tick" style="--i:72" x1="106.0" y1="70.6" x2="93.0" y2="52.8"/><line class="tick" style="--i:73" x1="116.4" y1="63.6" x2="104.9" y2="44.8"/><line class="tick" style="--i:74" x1="127.4" y1="57.4" x2="117.4" y2="37.8"/><line class="tick" style="--i:75" x1="138.8" y1="52.2" x2="130.4" y2="31.9"/><line class="tick" style="--i:76" x1="150.6" y1="47.8" x2="143.8" y2="26.9"/><line class="tick" style="--i:77" x1="162.6" y1="44.4" x2="157.5" y2="23.0"/><line class="tick" style="--i:78" x1="175.0" y1="42.0" x2="171.5" y2="20.2"/><line class="tick" style="--i:79" x1="187.4" y1="40.5" x2="185.7" y2="18.6"/></g>
+        <circle class="start" cx="200" cy="9" r="6.5"/>
+        <text class="n80" x="200" y="196" text-anchor="middle">80</text>
+        <line class="bar" x1="150" y1="216" x2="250" y2="216"/>
+        <text class="n40" x="200" y="288" text-anchor="middle">40</text>
+      </svg>
+    </div>
+    <div class="hero-text">
+      <h1><span class="h1-line">80 Days,</span> <span class="h1-line">40 Years Later</span></h1>
+      <p class="tagline">Two ghosts. One deadline. No planes.</p>
+      <p class="lede">In 1988 Michael Palin went round the world in 79 days and 7 hours without getting on a plane. Forty years on, someone's going to try to beat him.</p>
+      <div class="depart">
+        <p class="depart-when">Leaves London at 8.45pm on Monday 2 October 2028</p>
+        <dl class="count" id="count" aria-live="off">
+          <div><dt>days</dt><dd id="cd-days">715</dd></div>
+          <div><dt>hours</dt><dd id="cd-hours">02</dd></div>
+          <div><dt>minutes</dt><dd id="cd-mins">22</dd></div>
+        </dl>
+        <p class="depart-note" id="count-live" hidden>Under way. Follow the journey on Instagram.</p>
+        <p class="depart-note">The same minute Fogg's train pulled out of Charing Cross in 1872. Don't be late. Fogg wasn't.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.instagram.com/80days40years" target="_blank" rel="noopener">Follow on Instagram</a>
+        <span class="email">
+          <a class="email-addr" href="mailto:hello@80days40years.com">hello@80days40years.com</a>
+          <button class="btn copy" type="button" id="copy-hero" data-copy="hello@80days40years.com">Copy address</button>
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" aria-labelledby="ghosts-h">
+    <div class="wrap section-in">
+      <h2 id="ghosts-h">Two ghosts to beat</h2>
+      <ol class="ghosts">
+        <li>
+          <span class="g-year">1872</span>
+          <div class="g-who"><strong>Phileas Fogg</strong><span>A £20,000 bet at the Reform Club, about £2.5m today. In the novel he walked back in on the stroke of 8.45.</span></div>
+          <span class="g-time">80 days</span>
+        </li>
+        <li>
+          <span class="g-year">1988</span>
+          <div class="g-who"><strong>Michael Palin</strong><span>No planes, real timetables and a camera crew. Home on 13 December 1988 with 17 hours to spare.</span></div>
+          <span class="g-time">79 days, 7 hours</span>
+        </li>
+        <li class="next">
+          <span class="g-year">2028</span>
+          <div class="g-who"><strong>The third attempt</strong><span>Out on 2 October, due back by Thursday 21 December. Under 79 days and 7 hours beats them both.</span></div>
+          <span class="g-time">?</span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="timetable-h">
+    <div class="wrap section-in">
+      <h2 id="timetable-h">Fogg's timetable, 1872</h2>
+      <p class="intro">The route the Morning Chronicle worked out for Fogg in Jules Verne's novel. Most of these ships are long gone, so the 2028 route is being pieced together one leg at a time.</p>
+      <div class="paper">
+        <div class="paper-head"><span>From and to</span><span>Days</span></div>
+        <ol class="legs">
+          <li><span class="leg"><span class="leg-from">London to Suez</span><span class="leg-by">Rail and steamer, via Mont Cenis and Brindisi</span></span><span class="dots" aria-hidden="true"></span><span class="days">7</span></li>
+          <li><span class="leg"><span class="leg-from">Suez to Bombay</span><span class="leg-by">Steamer</span></span><span class="dots" aria-hidden="true"></span><span class="days">13</span></li>
+          <li><span class="leg"><span class="leg-from">Bombay to Calcutta</span><span class="leg-by">Rail</span></span><span class="dots" aria-hidden="true"></span><span class="days">3</span></li>
+          <li><span class="leg"><span class="leg-from">Calcutta to Hong Kong</span><span class="leg-by">Steamer</span></span><span class="dots" aria-hidden="true"></span><span class="days">13</span></li>
+          <li><span class="leg"><span class="leg-from">Hong Kong to Yokohama</span><span class="leg-by">Steamer</span></span><span class="dots" aria-hidden="true"></span><span class="days">6</span></li>
+          <li><span class="leg"><span class="leg-from">Yokohama to San Francisco</span><span class="leg-by">Steamer across the Pacific</span></span><span class="dots" aria-hidden="true"></span><span class="days">22</span></li>
+          <li><span class="leg"><span class="leg-from">San Francisco to New York</span><span class="leg-by">Rail</span></span><span class="dots" aria-hidden="true"></span><span class="days">7</span></li>
+          <li><span class="leg"><span class="leg-from">New York to London</span><span class="leg-by">Steamer and rail</span></span><span class="dots" aria-hidden="true"></span><span class="days">9</span></li>
+        </ol>
+        <div class="total"><span class="leg"><span class="leg-from">London to London</span></span><span class="dots" aria-hidden="true"></span><span class="days">80</span></div>
+      </div>
+      <p class="found">Some of the ships haven't been found yet.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="rules-h">
+    <div class="wrap section-in">
+      <h2 id="rules-h">The rules</h2>
+      <ul class="rules">
+        <li><span><strong>No flying.</strong> Not once, not even a short hop.</span></li>
+        <li><span><strong>Land and sea only.</strong> Trains, ships, buses, boats and feet.</span></li>
+        <li><span><strong>Eighty days.</strong> Out on 2 October, back in London by 21 December.</span></li>
+        <li><span><strong>One person a day.</strong> Eighty people met on the way round, from ships' captains to station cooks.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section contact" aria-labelledby="contact-h">
+    <div class="wrap section-in">
+      <h2 id="contact-h">Know someone on the route?</h2>
+      <p>A cargo captain with a spare cabin. A ferry that isn't on any timetable. Someone in Mumbai, Shanghai or Yokohama worth meeting. Get in touch.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.instagram.com/80days40years" target="_blank" rel="noopener">Follow on Instagram</a>
+        <span class="email">
+          <a class="email-addr" href="mailto:hello@80days40years.com">hello@80days40years.com</a>
+          <button class="btn copy" type="button" id="copy-contact" data-copy="hello@80days40years.com">Copy address</button>
+        </span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span>80days40years.com</span>
+    <span>Instagram <a href="https://www.instagram.com/80days40years" target="_blank" rel="noopener">@80days40years</a></span>
+    <span>© 2026</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Departure: 8.45pm BST (19:45 UTC), Monday 2 October 2028
+  var target = Date.UTC(2028, 9, 2, 19, 45, 0);
+  var dEl = document.getElementById('cd-days');
+  var hEl = document.getElementById('cd-hours');
+  var mEl = document.getElementById('cd-mins');
+  function pad(n) { return n < 10 ? '0' + n : String(n); }
+  function tick() {
+    var ms = target - Date.now();
+    if (ms <= 0) {
+      document.getElementById('count').hidden = true;
+      document.getElementById('count-live').hidden = false;
+      return;
+    }
+    var mins = Math.floor(ms / 60000);
+    dEl.textContent = Math.floor(mins / 1440);
+    hEl.textContent = pad(Math.floor((mins % 1440) / 60));
+    mEl.textContent = pad(mins % 60);
+  }
+  tick();
+  setInterval(tick, 15000);
+
+  var buttons = document.querySelectorAll('[data-copy]');
+  Array.prototype.forEach.call(buttons, function (btn) {
+    var label = btn.textContent;
+    function reset() { setTimeout(function () { btn.textContent = label; }, 2000); }
+    function selectInstead() {
+      var addr = btn.parentNode.querySelector('.email-addr');
+      var range = document.createRange();
+      range.selectNodeContents(addr);
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      btn.textContent = 'Address selected';
+      reset();
+    }
+    btn.addEventListener('click', function () {
+      var text = btn.getAttribute('data-copy');
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () {
+          btn.textContent = 'Copied';
+          reset();
+        }, selectInstead);
+      } else {
+        selectInstead();
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

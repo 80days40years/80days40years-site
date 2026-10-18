@@ -37,6 +37,8 @@
   --paper-ink:#16382B;
   --paper-dim:#56685B;
   --paper-line:#D9D2BB;
+  --paper-fold:#CBBF9C;
+  --seal-dark:#9E2F26;
   --display:"Playfair Display", Georgia, "Times New Roman", serif;
   --body:"Barlow", "Helvetica Neue", Arial, sans-serif;
   --narrow:"Barlow Semi Condensed", "Arial Narrow", "Barlow", sans-serif;
@@ -182,6 +184,52 @@ a{color:inherit}
 @media (min-width:900px){.contact .with-plate{align-items:center}}
 .contact p{max-width:36rem;margin:0 0 1.75rem;font-size:1.12rem}
 
+/* Hard legs */
+.legs-board{max-width:52rem;border:1px solid var(--rule);border-radius:3px;background:var(--ground-deep)}
+.board-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:1rem 1.25rem;border-bottom:1px solid var(--rule);font-family:var(--narrow);font-weight:600;color:var(--ink-dim)}
+.board-score{color:var(--ink);font-variant-numeric:tabular-nums}
+.board-score strong{color:var(--gold);font-size:1.35rem}
+.hard-legs{list-style:none;margin:0;padding:0}
+.hard-legs li{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"leg status" "why why";gap:.35rem 1rem;padding:1rem 1.25rem;border-bottom:1px solid var(--rule)}
+.hard-legs li:last-child{border-bottom:0}
+@media (min-width:720px){.hard-legs li{grid-template-columns:13rem minmax(0,1fr) auto;grid-template-areas:"leg why status";align-items:baseline}}
+.hl-leg{grid-area:leg;font-family:var(--narrow);font-weight:600;font-size:1.15rem;line-height:1.3}
+.hl-why{grid-area:why;color:var(--ink-dim)}
+.status{grid-area:status;justify-self:end;align-self:center;font-family:var(--narrow);font-weight:600;font-size:.85rem;line-height:1.2;padding:.25rem .65rem;border-radius:2px;white-space:nowrap}
+.s-open{border:1.5px solid var(--signal);color:var(--ink)}
+.s-easy{border:1.5px solid var(--rule);color:var(--ink-dim)}
+.s-done{border:1.5px solid var(--gold);background:var(--gold);color:var(--ground)}
+.found a,.whos-count a{color:var(--gold)}
+
+/* Logbook */
+.logbook{list-style:none;margin:0;padding:0;max-width:52rem;border-top:1px solid var(--rule)}
+.logbook li{display:grid;grid-template-columns:minmax(0,1fr);gap:.2rem;padding-block:1.1rem;border-bottom:1px solid var(--rule)}
+@media (min-width:720px){.logbook li{grid-template-columns:11rem 9rem minmax(0,1fr);gap:1rem;align-items:baseline}}
+.log-date{font-family:var(--narrow);font-weight:600;font-size:1.05rem;color:var(--gold)}
+.log-days{color:var(--ink-dim);font-size:.9rem;font-variant-numeric:tabular-nums}
+.log-text{max-width:36rem}
+.log-next .log-text{color:var(--ink-dim);font-style:italic}
+
+/* Who's going */
+.whos-grid{display:grid;gap:2rem;align-items:center}
+@media (min-width:820px){.whos-grid{grid-template-columns:minmax(0,26rem) minmax(0,1fr);gap:3.5rem}}
+.envelope{margin:0;max-width:26rem;width:100%}
+.envelope svg{display:block;width:100%;height:auto}
+.env-paper{fill:var(--paper);stroke:var(--paper-line);stroke-width:2}
+.env-fold{fill:none;stroke:var(--paper-fold);stroke-width:2;stroke-linejoin:round}
+.env-post{fill:none;stroke:var(--paper-dim);stroke-width:1.5;opacity:.6}
+.env-post-text{fill:var(--paper-dim);font-family:var(--narrow);font-weight:600;opacity:.75}
+.env-seal{fill:var(--signal)}
+.env-seal-ring{fill:none;stroke:var(--seal-dark);stroke-width:2}
+.env-seal-bar{stroke:var(--paper);stroke-width:1.5}
+.env-seal-text{fill:var(--paper);font-family:var(--display);font-weight:700}
+.env-ink{fill:var(--paper-ink);font-family:var(--display);font-weight:600}
+.whos h2{margin-bottom:.5rem}
+.whos-line{font-family:var(--display);font-weight:600;font-size:clamp(1.45rem,3vw,1.95rem);line-height:1.2;color:var(--gold);margin:0 0 .75rem;text-wrap:balance}
+.whos-sub{font-size:1.15rem;line-height:1.5;max-width:32rem;margin:0 0 1.25rem}
+.whos-count{color:var(--ink-dim);margin:0}
+.whos-count strong{color:var(--ink);font-family:var(--narrow);font-weight:600;font-size:1.35rem;font-variant-numeric:tabular-nums}
+
 /* Footer */
 .foot{border-top:1px solid var(--rule);color:var(--ink-dim);font-size:.9rem}
 .foot-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 2rem;padding-block:1.75rem 2.25rem}
@@ -220,11 +268,7 @@ a{color:inherit}
         <p class="depart-note">The same minute Fogg's train pulled out of Charing Cross in 1872. Don't be late. Fogg wasn't.</p>
       </div>
       <div class="actions">
-        <a class="btn btn-primary" href="https://www.instagram.com/80days40years" target="_blank" rel="noopener">Follow on Instagram</a>
-        <span class="email">
-          <a class="email-addr" href="mailto:hello@80days40years.com">hello@80days40years.com</a>
-          <button class="btn copy" type="button" id="copy-hero" data-copy="hello@80days40years.com">Copy address</button>
-        </span>
+        <a class="btn btn-primary" href="https://www.instagram.com/80days40years" target="_blank" rel="noopener">Follow on Instagram for updates</a>
       </div>
     </div>
   </header>
@@ -235,6 +279,37 @@ a{color:inherit}
         <img src="map-1873.jpg" width="960" height="320" alt="Old engraved world map with a line tracing Fogg's route east from London, across Asia and the Pacific, through North America and back over the Atlantic.">
         <figcaption>Fogg's route, as mapped in an early French edition of the novel.</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="rules-h">
+    <div class="wrap section-in">
+      <h2 id="rules-h">The rules</h2>
+      <ul class="rules">
+        <li><span><strong>No flying.</strong> Not once, not even a short hop.</span></li>
+        <li><span><strong>Land and sea only.</strong> Trains, ships, buses, boats and feet.</span></li>
+        <li><span><strong>Eighty days.</strong> Out on 2 October, back in London by 21 December.</span></li>
+        <li><span><strong>One person a day.</strong> Eighty people met on the way round, from ships' captains to station cooks.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="harder-h">
+    <div class="wrap section-in">
+      <h2 id="harder-h">Why it's harder now</h2>
+      <p class="intro">Fogg bought his tickets at the dock. Palin hitched a dhow across the Arabian Sea and a container ship over the Pacific. Forty years on, most ships crossing an ocean carry boxes, not people.</p>
+      <div class="legs-board">
+        <div class="board-head"><span>The hard legs</span><span class="board-score"><strong>1</strong> of 6 sorted</span></div>
+        <ol class="hard-legs">
+          <li><span class="hl-leg">Europe to Egypt</span><span class="hl-why">Passenger ferries across the Mediterranean to Egypt have all but gone.</span><span class="status s-open">Unsolved</span></li>
+          <li><span class="hl-leg">Across the Arabian Sea</span><span class="hl-why">No passenger ships. Palin went by dhow.</span><span class="status s-open">Unsolved</span></li>
+          <li><span class="hl-leg">India to the Far East</span><span class="hl-why">Overland means Myanmar. By sea means finding a ship that will take a passenger.</span><span class="status s-open">Unsolved</span></li>
+          <li><span class="hl-leg">Across the Pacific</span><span class="hl-why">Around two weeks on a cargo ship, if one will have you.</span><span class="status s-open">Unsolved</span></li>
+          <li><span class="hl-leg">Across America</span><span class="hl-why">Trains still run coast to coast.</span><span class="status s-easy">Straightforward</span></li>
+          <li><span class="hl-leg">Across the Atlantic</span><span class="hl-why">The one ocean with a proper passenger ship.</span><span class="status s-done">Sorted</span></li>
+        </ol>
+      </div>
+      <p class="found">Updated as each leg is cracked. Follow along on <a href="https://www.instagram.com/80days40years" target="_blank" rel="noopener">Instagram</a>.</p>
     </div>
   </section>
 
@@ -316,15 +391,71 @@ a{color:inherit}
     </div>
   </section>
 
-  <section class="section" aria-labelledby="rules-h">
+  <section class="section" aria-labelledby="log-h">
     <div class="wrap section-in">
-      <h2 id="rules-h">The rules</h2>
-      <ul class="rules">
-        <li><span><strong>No flying.</strong> Not once, not even a short hop.</span></li>
-        <li><span><strong>Land and sea only.</strong> Trains, ships, buses, boats and feet.</span></li>
-        <li><span><strong>Eighty days.</strong> Out on 2 October, back in London by 21 December.</span></li>
-        <li><span><strong>One person a day.</strong> Eighty people met on the way round, from ships' captains to station cooks.</span></li>
-      </ul>
+      <h2 id="log-h">Logbook</h2>
+      <p class="intro">Dispatches from the build-up, newest first.</p>
+      <ol class="logbook">
+        <li class="log-next"><span class="log-date">Next</span><span class="log-days">&nbsp;</span><span class="log-text">Finding a way across the Pacific.</span></li>
+        <li><span class="log-date">18 October 2026</span><span class="log-days">715 days to go</span><span class="log-text">The handles are claimed, the domain is bought and this page goes live. Day one of the build-up.</span></li>
+      </ol>
+      <p class="found">Smaller updates go to <a href="https://www.instagram.com/80days40years" target="_blank" rel="noopener">Instagram</a> first.</p>
+    </div>
+  </section>
+
+  <section class="section whos" aria-labelledby="whos-h">
+    <div class="wrap section-in">
+      <div class="whos-grid">
+        <figure class="envelope">
+          <svg viewBox="0 0 480 320" role="img" aria-labelledby="env-title">
+            <title id="env-title">A sealed envelope marked to be opened on 2 October 2027</title>
+            <rect class="env-paper" x="10" y="10" width="460" height="300" rx="6"/>
+            <path class="env-fold" d="M12 12 L240 172 L468 12"/>
+            <circle class="env-post" cx="404" cy="72" r="36"/>
+            <circle class="env-post" cx="404" cy="72" r="29"/>
+            <text class="env-post-text" x="404" y="69" text-anchor="middle" font-size="12" letter-spacing="2">LONDON</text>
+            <text class="env-post-text" x="404" y="85" text-anchor="middle" font-size="10.5">18 OCT 2026</text>
+            <path class="env-post" d="M296 60 q7.5 -6 15 0 t15 0 t15 0 t15 0 M296 72 q7.5 -6 15 0 t15 0 t15 0 t15 0 M296 84 q7.5 -6 15 0 t15 0 t15 0 t15 0"/>
+            <circle class="env-seal" cx="240" cy="172" r="38"/>
+            <circle class="env-seal" cx="214" cy="190" r="9"/>
+            <circle class="env-seal" cx="268" cy="196" r="7"/>
+            <circle class="env-seal-ring" cx="240" cy="172" r="28"/>
+            <text class="env-seal-text" x="240" y="169" text-anchor="middle" font-size="22">80</text>
+            <line class="env-seal-bar" x1="226" y1="174" x2="254" y2="174"/>
+            <text class="env-seal-text" x="240" y="193" text-anchor="middle" font-size="18">40</text>
+            <text class="env-ink" x="40" y="258" font-size="17">To be opened on</text>
+            <text class="env-ink" x="40" y="290" font-size="27">2 October 2027</text>
+          </svg>
+        </figure>
+        <div class="whos-text">
+          <h2 id="whos-h">Who's going?</h2>
+          <p class="whos-line">Name sealed until 2 October 2027.</p>
+          <p class="whos-sub">Partly for suspense. Partly so nobody can talk them out of it. Mostly because their boss doesn't know yet.</p>
+          <p class="whos-count"><strong id="reveal-days">349</strong> days until the envelope is opened. Watch <a href="https://www.instagram.com/80days40years" target="_blank" rel="noopener">Instagram</a> for clues.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" aria-labelledby="contact-h">
+    <div class="wrap section-in">
+      <div class="with-plate">
+        <div class="plate-col">
+          <h2 id="contact-h">Nominate one of the 80</h2>
+        <p>One person met on each day of the journey, eighty in all. Know someone on the route worth meeting? A ferry captain on the Red Sea, a tea auctioneer in Calcutta, a cook on a Pacific freighter. Send a name and one line on why.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:hello@80days40years.com?subject=Nomination">Email a nomination</a>
+          <span class="email">
+            <a class="email-addr" href="mailto:hello@80days40years.com?subject=Nomination">hello@80days40years.com</a>
+            <button class="btn copy" type="button" id="copy-contact" data-copy="hello@80days40years.com">Copy address</button>
+          </span>
+        </div>
+        </div>
+        <figure class="plate">
+          <img src="plate-return.jpg" width="640" height="926" loading="lazy" alt="Engraving of a man walking into a grand club room, hat in hand, watched by a group of gentlemen and a crowd at the door.">
+          <figcaption>&ldquo;Here I am, gentlemen.&rdquo; Fogg walks back into the Reform Club on the stroke of 8.45. From the first illustrated edition of 1873.</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
@@ -351,28 +482,6 @@ a{color:inherit}
         <figure class="plate">
           <img src="plate-henrietta.jpg" width="640" height="913" loading="lazy" alt="Engraving of sailors on a steamer's deck sawing and chopping up the ship's woodwork beside its tall funnels.">
           <figcaption>The Henrietta's crew break up her woodwork to keep the boilers burning. Léon Benett, from the first illustrated edition of 1873.</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <section class="section contact" aria-labelledby="contact-h">
-    <div class="wrap section-in">
-      <div class="with-plate">
-        <div class="plate-col">
-          <h2 id="contact-h">Know someone on the route?</h2>
-        <p>A cargo captain with a spare cabin. A ferry that isn't on any timetable. Someone in Mumbai, Shanghai or Yokohama worth meeting. Get in touch.</p>
-        <div class="actions">
-          <a class="btn btn-primary" href="https://www.instagram.com/80days40years" target="_blank" rel="noopener">Follow on Instagram</a>
-          <span class="email">
-            <a class="email-addr" href="mailto:hello@80days40years.com">hello@80days40years.com</a>
-            <button class="btn copy" type="button" id="copy-contact" data-copy="hello@80days40years.com">Copy address</button>
-          </span>
-        </div>
-        </div>
-        <figure class="plate">
-          <img src="plate-return.jpg" width="640" height="926" loading="lazy" alt="Engraving of a man walking into a grand club room, hat in hand, watched by a group of gentlemen and a crowd at the door.">
-          <figcaption>&ldquo;Here I am, gentlemen.&rdquo; Fogg walks back into the Reform Club on the stroke of 8.45. From the first illustrated edition of 1873.</figcaption>
         </figure>
       </div>
     </div>
@@ -411,6 +520,13 @@ a{color:inherit}
   }
   tick();
   setInterval(tick, 1000);
+
+  var rEl = document.getElementById('reveal-days');
+  if (rEl) {
+    // Midnight BST, 2 October 2027
+    var rd = Math.ceil((Date.UTC(2027, 9, 1, 23, 0, 0) - Date.now()) / 86400000);
+    if (rd > 0) { rEl.textContent = rd; } else { rEl.parentNode.textContent = 'The envelope is open.'; }
+  }
 
   var buttons = document.querySelectorAll('[data-copy]');
   Array.prototype.forEach.call(buttons, function (btn) {

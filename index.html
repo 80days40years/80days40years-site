@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Two ghosts. One deadline. No planes. Round the world in 80 days, leaving London on 2 October 2028.">
+<meta name="description" content="Two ghosts. One deadline. No planes. Jules Verne's Phileas Fogg did it in 80 days in 1872, Michael Palin in 79 days and 7 hours in 1988. Leaving London on 2 October 2028.">
 <meta name="theme-color" content="#16382B">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://80days40years.com/">
 <meta property="og:title" content="80 Days, 40 Years Later">
-<meta property="og:description" content="Two ghosts. One deadline. No planes. Round the world in 80 days, leaving London on 2 October 2028.">
+<meta property="og:description" content="Two ghosts. One deadline. No planes. Jules Verne's Phileas Fogg did it in 80 days in 1872, Michael Palin in 79 days and 7 hours in 1988. Leaving London on 2 October 2028.">
 <meta property="og:image" content="https://80days40years.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -18,7 +18,7 @@
 <title>80 Days, 40 Years Later</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Barlow:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Barlow:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap">
 <style>
 /* Layout: one left-aligned column. The hero pairs the headline with the 80-tick dial
    (one tick per day of the journey). Fogg's 1872 timetable is the only object set off,
@@ -184,6 +184,21 @@ a{color:inherit}
 @media (min-width:900px){.contact .with-plate{align-items:center}}
 .contact p{max-width:36rem;margin:0 0 1.75rem;font-size:1.12rem}
 
+/* Epigraph and quotes from the novel */
+.epigraph{border-top:1px solid var(--rule)}
+.epigraph-in{padding-block:clamp(2.5rem,6vw,4rem)}
+.quote{margin:0;max-width:46rem}
+.quote p{margin:0;font-family:var(--display);font-style:italic;font-weight:600;font-size:clamp(1.6rem,4.2vw,2.6rem);line-height:1.2;text-wrap:balance}
+.quote p:first-child{color:var(--ink-dim)}
+.quote p + p{color:var(--gold);margin-top:.35rem}
+.quote footer{margin-top:1.1rem;font-family:var(--narrow);font-weight:600;font-size:.95rem;color:var(--ink-dim)}
+.quote cite{font-style:italic}
+.epigraph-turn{margin:1.5rem 0 0;font-size:1.15rem;line-height:1.5;max-width:36rem}
+.pull{margin:0 0 1.75rem;padding-left:1.1rem;border-left:3px solid var(--gold);max-width:38rem}
+.pull p{margin:0;font-family:var(--display);font-style:italic;font-weight:600;font-size:1.3rem;line-height:1.4}
+.pull footer{margin-top:.6rem;font-family:var(--narrow);font-weight:600;font-size:.9rem;color:var(--ink-dim)}
+.pull-wager{margin:2.25rem 0 0}
+
 /* Hard legs */
 .legs-board{max-width:52rem;border:1px solid var(--rule);border-radius:3px;background:var(--ground-deep)}
 .board-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:1rem 1.25rem;border-bottom:1px solid var(--rule);font-family:var(--narrow);font-weight:600;color:var(--ink-dim)}
@@ -255,7 +270,7 @@ a{color:inherit}
     <div class="hero-text">
       <h1><span class="h1-line">80 Days,</span> <span class="h1-line">40 Years Later</span></h1>
       <p class="tagline">Two ghosts. One deadline. No planes.</p>
-      <p class="lede">In 1988 Michael Palin went round the world in 79 days and 7 hours without getting on a plane. Forty years on, someone's going to try to beat him.</p>
+      <p class="lede">In 1872 Jules Verne sent Phileas Fogg round the world in eighty days on a bet. In 1988 Michael Palin did it for real in 79 days and 7 hours. Forty years on, someone's going to try to beat them both.</p>
       <div class="depart">
         <p class="depart-when">Leaves London at 8.45pm on Monday 2 October 2028</p>
         <dl class="count" id="count" aria-live="off">
@@ -272,6 +287,17 @@ a{color:inherit}
       </div>
     </div>
   </header>
+
+  <section class="epigraph" aria-label="From the novel">
+    <div class="wrap epigraph-in">
+      <blockquote class="quote">
+        <p>&ldquo;The world is big enough.&rdquo;</p>
+        <p>&ldquo;It was once,&rdquo; said Phileas Fogg.</p>
+        <footer>Jules Verne, <cite>Around the World in Eighty Days</cite></footer>
+      </blockquote>
+      <p class="epigraph-turn">In 1872 steam made the world smaller. In 2028, without planes, it's big again.</p>
+    </div>
+  </section>
 
   <section class="map-band" aria-label="Fogg's route as mapped in an early edition">
     <div class="wrap">
@@ -297,6 +323,9 @@ a{color:inherit}
   <section class="section" aria-labelledby="harder-h">
     <div class="wrap section-in">
       <h2 id="harder-h">Why it's harder now</h2>
+      <blockquote class="pull">
+        <p>&ldquo;The unforeseen does not exist,&rdquo; quietly replied Phileas Fogg.</p>
+      </blockquote>
       <p class="intro">Fogg bought his tickets at the dock. Palin hitched a dhow across the Arabian Sea and a container ship over the Pacific. Forty years on, most ships crossing an ocean carry boxes, not people.</p>
       <div class="legs-board">
         <div class="board-head"><span>The hard legs</span><span class="board-score"><strong>1</strong> of 6 sorted</span></div>
@@ -317,6 +346,7 @@ a{color:inherit}
     <div class="wrap section-in">
       <h2 id="ghosts-h">Two ghosts to beat</h2>
       <div class="with-plate">
+        <div class="plate-col">
         <ol class="ghosts">
           <li>
             <span class="g-year">1872</span>
@@ -334,6 +364,11 @@ a{color:inherit}
             <span class="g-time">?</span>
           </li>
         </ol>
+        <blockquote class="pull pull-wager">
+          <p>&ldquo;I will bet twenty thousand pounds against anyone who wishes that I will make the tour of the world in eighty days or less; in nineteen hundred and twenty hours, or a hundred and fifteen thousand two hundred minutes. Do you accept?&rdquo;</p>
+          <footer>Phileas Fogg at the Reform Club, Chapter III</footer>
+        </blockquote>
+        </div>
       <figure class="plate">
         <img src="plate-reform-club.jpg" width="640" height="925" loading="lazy" alt="Engraving of five Victorian gentlemen at a card table in a grand club room, with two more standing behind them.">
         <figcaption>Whist at the Reform Club, where the bet was made. Alphonse de Neuville, from the first illustrated edition of 1873.</figcaption>

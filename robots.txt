@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://80days40years.com/sitemap.xml

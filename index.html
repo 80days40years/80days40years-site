@@ -4,22 +4,35 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Two ghosts. One deadline. No planes. Jules Verne's Phileas Fogg did it in 80 days in 1872, Michael Palin in 79 days and 7 hours in 1988. Leaving London on 2 October 2028.">
+<link rel="canonical" href="https://80days40years.com/">
 <meta name="theme-color" content="#0F5C5A">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="80 Days, 40 Years Later">
+<meta property="og:locale" content="en_GB">
 <meta property="og:url" content="https://80days40years.com/">
 <meta property="og:title" content="80 Days, 40 Years Later">
 <meta property="og:description" content="Two ghosts. One deadline. No planes. Jules Verne's Phileas Fogg did it in 80 days in 1872, Michael Palin in 79 days and 7 hours in 1988. Leaving London on 2 October 2028.">
-<meta property="og:image" content="https://80days40years.com/og-image.png?v=2">
+<meta property="og:image" content="https://80days40years.com/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="80 Days, 40 Years Later. Around the world without flying, leaving London on 2 October 2028.">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="80 Days, 40 Years Later">
+<meta name="twitter:description" content="Two ghosts. One deadline. No planes. Jules Verne's Phileas Fogg did it in 80 days in 1872, Michael Palin in 79 days and 7 hours in 1988. Leaving London on 2 October 2028.">
+<meta name="twitter:image" content="https://80days40years.com/og-image.jpg">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<title>80 Days, 40 Years Later</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600&family=Permanent+Marker&family=Special+Elite&display=swap">
+<title>80 Days, 40 Years Later | Around the world without flying, 2028</title>
+<link rel="preload" href="/fonts/anton-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/barlow-400.woff2" as="font" type="font/woff2" crossorigin>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://80days40years.com/#website","url":"https://80days40years.com/","name":"80 Days, 40 Years Later","description":"Two ghosts. One deadline. No planes. Jules Verne's Phileas Fogg did it in 80 days in 1872, Michael Palin in 79 days and 7 hours in 1988. Leaving London on 2 October 2028.","inLanguage":"en-GB"},{"@type":"Organization","@id":"https://80days40years.com/#org","name":"80 Days, 40 Years Later","url":"https://80days40years.com/","logo":"https://80days40years.com/apple-touch-icon.png","email":"hello@80days40years.com","sameAs":["https://www.instagram.com/80days40years"]},{"@type":"Event","name":"80 Days, 40 Years Later: around the world without flying","description":"An attempt to circle the world in under eighty days by land and sea only, following Phileas Fogg (1872) and Michael Palin (1988).","startDate":"2028-10-02T20:45:00+01:00","endDate":"2028-12-21","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"London","address":{"@type":"PostalAddress","addressLocality":"London","addressCountry":"GB"}},"image":"https://80days40years.com/og-image.jpg","url":"https://80days40years.com/","organizer":{"@id":"https://80days40years.com/#org"}}]}</script>
 <style>
+/* Fonts are self-hosted in /fonts (latin subsets of the Google Fonts files). */
+@font-face{font-family:"Anton";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/anton-400.woff2) format("woff2")}
+@font-face{font-family:"Barlow";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/barlow-400.woff2) format("woff2")}
+@font-face{font-family:"Barlow";font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/barlow-600.woff2) format("woff2")}
+@font-face{font-family:"Permanent Marker";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/permanent-marker-400.woff2) format("woff2")}
+@font-face{font-family:"Special Elite";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/special-elite-400.woff2) format("woff2")}
 /* Layout: "Field Notes", matching the Instagram grid. Paper and sea-teal bands alternate
    like the pinned grid. Anton for headlines, Special Elite for labels and tickets,
    Permanent Marker for the asides, Barlow for reading. Tape labels, port stamps, ticket
@@ -45,7 +58,8 @@
   color-scheme: light;
 }
 *,*::before,*::after{box-sizing:border-box}
-html{background:var(--paper);overflow-x:clip}
+html{background:var(--paper);overflow-x:clip;scroll-padding-top:3.5rem}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 body{margin:0;overflow-x:clip;background-color:var(--paper);background-image:radial-gradient(rgba(110,80,30,.13) 1px,transparent 1.5px),radial-gradient(rgba(110,80,30,.08) 1px,transparent 1.5px);background-size:9px 9px,14px 14px;background-position:0 0,4px 6px;color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--red);outline-offset:3px}
@@ -53,6 +67,25 @@ a{color:inherit}
 
 .wrap{max-width:68rem;margin-inline:auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
 @media (min-width:600px){.wrap{padding-left:max(32px, env(safe-area-inset-left, 0px));padding-right:max(32px, env(safe-area-inset-right, 0px))}}
+
+/* Jump nav: sticks to the top so Nominate and Sponsor are one tap away on a long page */
+.skip{position:absolute;left:-999px;top:0;z-index:30;padding:.6rem 1rem;background:var(--tape);color:var(--ink);font-family:var(--type)}
+.skip:focus{left:0}
+.jump{position:sticky;top:0;z-index:20;background:var(--ink);color:var(--cream);font-family:var(--type);box-shadow:0 2px 0 rgba(23,20,15,.25)}
+.jump-in{display:flex;align-items:center;gap:1.5rem}
+.jump-mark{display:none;font-family:var(--display);font-size:1.25rem;letter-spacing:.03em;line-height:1;text-decoration:none;color:var(--cream);white-space:nowrap}
+.jump-mark b{font-weight:400;color:var(--red)}
+.jump ul{display:flex;flex:1;justify-content:space-between;gap:0;list-style:none;margin:0 -.5rem;padding:0;overflow-x:auto;scrollbar-width:none}
+.jump ul::-webkit-scrollbar{display:none}
+.jump li a{display:flex;align-items:center;min-height:48px;padding:.2rem .5rem 0;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;white-space:nowrap;color:var(--cream);border-bottom:3px solid transparent}
+.jump li a:hover{color:var(--tape)}
+.jump li a[aria-current="true"]{color:var(--tape);border-bottom-color:var(--red)}
+.jump :focus-visible{outline-color:var(--tape);outline-offset:-3px}
+@media (min-width:600px){
+  .jump-mark{display:block}
+  .jump ul{flex:0 1 auto;margin-left:auto;gap:.75rem}
+  .jump li a{font-size:.9rem;letter-spacing:.1em;padding-inline:.6rem}
+}
 
 /* Bands */
 .band{position:relative}
@@ -289,8 +322,21 @@ a{color:inherit}
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
 <body>
-<main>
-  <header class="hero band">
+<a class="skip" href="#main">Skip to content</a>
+<nav class="jump" aria-label="Sections">
+  <div class="wrap jump-in">
+    <a class="jump-mark" href="#top" aria-label="Back to top">80<b>/</b>40</a>
+    <ul>
+      <li><a href="#rules">Rules</a></li>
+      <li><a href="#route">Route</a></li>
+      <li><a href="#logbook">Logbook</a></li>
+      <li><a href="#nominate">Nominate</a></li>
+      <li><a href="#sponsor">Sponsor</a></li>
+    </ul>
+  </div>
+</nav>
+<main id="main">
+  <header class="hero band" id="top">
     <div class="wrap hero-in">
       <div class="hero-text">
         <div class="hero-top">
@@ -356,7 +402,7 @@ a{color:inherit}
     </div>
   </section>
 
-  <section class="section band band-teal" aria-labelledby="rules-h">
+  <section id="rules" class="section band band-teal" aria-labelledby="rules-h">
     <div class="wrap section-in">
       <p class="tape">Break one and it doesn't count</p>
       <h2 id="rules-h">The rules</h2>
@@ -421,14 +467,14 @@ a{color:inherit}
         </blockquote>
         </div>
         <figure class="plate">
-          <img src="plate-reform-club-ink.jpg" width="640" height="925" loading="lazy" alt="Engraving of five Victorian gentlemen at a card table in a grand club room, with two more standing behind them.">
+          <img src="plate-reform-club-ink.jpg" width="640" height="925" loading="lazy" decoding="async" alt="Engraving of five Victorian gentlemen at a card table in a grand club room, with two more standing behind them.">
           <figcaption>Whist at the Reform Club, where the bet was made. Alphonse de Neuville, from the first illustrated edition of 1873.</figcaption>
         </figure>
       </div>
     </div>
   </section>
 
-  <section class="section band" aria-labelledby="timetable-h">
+  <section id="route" class="section band" aria-labelledby="timetable-h">
     <div class="wrap section-in">
       <p class="tape">As printed in the Morning Chronicle</p>
       <h2 id="timetable-h">Fogg's timetable, 1872</h2>
@@ -471,14 +517,14 @@ a{color:inherit}
         <p class="found">Some of the ships haven't been found yet.</p>
         </div>
         <figure class="plate tilt-l">
-          <img src="plate-elephant-ink.jpg" width="640" height="925" loading="lazy" alt="Engraving of a man in a top hat riding an elephant, with a companion in a bowler hat and a guide holding a goad.">
+          <img src="plate-elephant-ink.jpg" width="640" height="925" loading="lazy" decoding="async" alt="Engraving of a man in a top hat riding an elephant, with a companion in a bowler hat and a guide holding a goad.">
           <figcaption>Crossing India by elephant when the railway turns out to be unfinished. Léon Benett, from the first illustrated edition of 1873.</figcaption>
         </figure>
       </div>
     </div>
   </section>
 
-  <section class="section band band-teal" aria-labelledby="log-h">
+  <section id="logbook" class="section band band-teal" aria-labelledby="log-h">
     <div class="wrap section-in">
       <p class="tape">Dispatches</p>
       <h2 id="log-h">Logbook</h2>
@@ -526,7 +572,7 @@ a{color:inherit}
     </div>
   </section>
 
-  <section class="section band band-teal contact" aria-labelledby="contact-h">
+  <section id="nominate" class="section band band-teal contact" aria-labelledby="contact-h">
     <div class="wrap section-in">
       <div class="with-plate">
         <div class="plate-col">
@@ -542,14 +588,14 @@ a{color:inherit}
           </div>
         </div>
         <figure class="plate">
-          <img src="plate-return-ink.jpg" width="640" height="926" loading="lazy" alt="Engraving of a man walking into a grand club room, hat in hand, watched by a group of gentlemen and a crowd at the door.">
+          <img src="plate-return-ink.jpg" width="640" height="926" loading="lazy" decoding="async" alt="Engraving of a man walking into a grand club room, hat in hand, watched by a group of gentlemen and a crowd at the door.">
           <figcaption>&ldquo;Here I am, gentlemen.&rdquo; Fogg walks back into the Reform Club on the stroke of 8.45. From the first illustrated edition of 1873.</figcaption>
         </figure>
       </div>
     </div>
   </section>
 
-  <section class="section band" aria-labelledby="sponsor-h">
+  <section id="sponsor" class="section band" aria-labelledby="sponsor-h">
     <div class="wrap section-in">
       <p class="tape">Partners wanted</p>
       <h2 id="sponsor-h">Sponsor the journey</h2>
@@ -571,7 +617,7 @@ a{color:inherit}
         </div>
         </div>
         <figure class="plate tilt-l">
-          <img src="plate-henrietta-ink.jpg" width="640" height="913" loading="lazy" alt="Engraving of sailors on a steamer's deck sawing and chopping up the ship's woodwork beside its tall funnels.">
+          <img src="plate-henrietta-ink.jpg" width="640" height="913" loading="lazy" decoding="async" alt="Engraving of sailors on a steamer's deck sawing and chopping up the ship's woodwork beside its tall funnels.">
           <figcaption>The Henrietta's crew break up her woodwork to keep the boilers burning. Léon Benett, from the first illustrated edition of 1873.</figcaption>
         </figure>
       </div>
@@ -617,6 +663,26 @@ a{color:inherit}
     // Midnight BST, 2 October 2027
     var rd = Math.ceil((Date.UTC(2027, 9, 1, 23, 0, 0) - Date.now()) / 86400000);
     if (rd > 0) { rEl.textContent = rd; } else { rEl.parentNode.textContent = 'The envelope is open.'; }
+  }
+
+  // Jump nav: mark the section currently on screen
+  var links = document.querySelectorAll('.jump li a');
+  if (links.length && 'IntersectionObserver' in window) {
+    var byId = {};
+    Array.prototype.forEach.call(links, function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        Array.prototype.forEach.call(links, function (a) { a.removeAttribute('aria-current'); });
+        var a = byId[e.target.id];
+        if (a) {
+          a.setAttribute('aria-current', 'true');
+          var ul = a.parentNode.parentNode;
+          if (ul.scrollWidth > ul.clientWidth) { ul.scrollLeft = a.offsetLeft - ul.offsetLeft - 16; }
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    Array.prototype.forEach.call(document.querySelectorAll('main > header, main > section'), function (el) { io.observe(el); });
   }
 
   var buttons = document.querySelectorAll('[data-copy]');
